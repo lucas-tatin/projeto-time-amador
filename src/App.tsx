@@ -148,6 +148,26 @@ function App() {
                   <span className="jogador-gols">⚽ 4 gols</span>
                 </div>
               </li>
+
+              <li className="jogador">
+                <img className="jogador-foto" src="https://randomuser.me/api/portraits/men/36.jpg" alt="Foto de Gabriel Santos" />
+                <h3 className="jogador-nome">Gabriel Santos</h3>
+                <span className="jogador-numero">#2</span>
+                <div className="jogador-detalhes">
+                  <span className="jogador-posicao">Lateral</span>
+                  <span className="jogador-gols">⚽ 0 gols</span>
+                </div>
+              </li>
+
+              <li className="jogador">
+                <img className="jogador-foto" src="https://randomuser.me/api/portraits/men/85.jpg" alt="Foto de Pedro Henrique" />
+                <h3 className="jogador-nome">Pedro Henrique</h3>
+                <span className="jogador-numero">#12</span>
+                <div className="jogador-detalhes">
+                  <span className="jogador-posicao">Goleiro</span>
+                  <span className="jogador-gols">⚽ 0 gols</span>
+                </div>
+              </li>
             </ul>
           </section>
 
