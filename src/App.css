@@ -130,3 +130,111 @@ body {
   color: var(--cor-branco);
   font-weight: 700;
 }
+
+/* ---------- títulos das seções ---------- */
+.secao-topo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-p);
+  margin-bottom: var(--espaco-m);
+}
+
+.secao-titulo {
+  font-size: var(--texto-titulo);
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+
+/* ---------- filtros do elenco ---------- */
+.filtros {
+  display: flex;
+  gap: var(--espaco-p);
+  overflow-x: auto;
+}
+
+.filtro {
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 999px;
+  background-color: var(--cor-branco);
+  font-family: var(--fonte);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.filtro-ativo {
+  border-color: var(--cor-destaque);
+  background-color: var(--cor-destaque);
+  color: var(--cor-branco);
+  font-weight: 700;
+}
+
+/* ---------- elenco ---------- */
+.elenco {
+  margin-bottom: var(--espaco-g);
+}
+
+.jogadores {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-m);
+}
+
+/* no celular o card é horizontal: foto | nome e detalhes | número */
+.jogador {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  grid-template-areas:
+    "foto nome numero"
+    "foto detalhes numero";
+  column-gap: var(--espaco-m);
+  align-items: center;
+  padding: var(--espaco-m);
+  border-left: 4px solid var(--cor-destaque);
+  border-radius: var(--raio);
+  background-color: var(--cor-branco);
+}
+
+.jogador-foto {
+  grid-area: foto;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: var(--raio);
+}
+
+.jogador-nome {
+  grid-area: nome;
+  font-size: var(--texto-normal);
+  font-weight: 700;
+}
+
+.jogador-numero {
+  grid-area: numero;
+  font-size: var(--texto-numero);
+  font-weight: 900;
+  color: var(--cor-primaria);
+}
+
+.jogador-detalhes {
+  grid-area: detalhes;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.jogador-posicao {
+  padding: 0 var(--espaco-p);
+  border: 1px solid var(--cor-destaque);
+  border-radius: 999px;
+  background-color: var(--cor-destaque-clara);
+  color: var(--cor-primaria-escura);
+  font-size: var(--texto-pequeno);
+  font-weight: 700;
+}
+
+.jogador-gols {
+  font-size: var(--texto-pequeno);
+  color: var(--cor-texto-suave);
+}
