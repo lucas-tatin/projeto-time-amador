@@ -413,3 +413,58 @@ body {
     grid-row: span 2;
   }
 }
+
+/* ========== DESKTOP (a partir de 1024px) ========== */
+@media (min-width: 1024px) {
+  .cabecalho {
+    padding: var(--espaco-m) var(--espaco-g);
+  }
+
+  .principal {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .sobre-foto {
+    height: 260px;
+  }
+
+  /* elenco ocupa ~3/4 e os jogos viram uma coluna lateral */
+  .conteudo {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: var(--espaco-g);
+    align-items: start;
+  }
+
+  .jogadores {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .jogos {
+    padding: var(--espaco-m);
+    border-radius: var(--raio);
+    background-color: var(--cor-branco);
+  }
+
+  /* card do jogo compacto: data + adversário + selo em cima, local embaixo */
+  .jogo {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "data adversario"
+      "data mando"
+      "local local";
+    row-gap: var(--espaco-p);
+    border: 1px solid var(--cor-borda);
+    border-left: 4px solid var(--cor-destaque);
+  }
+
+  /* rodapé em 3 colunas */
+  .rodape {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rodape-time {
+    grid-row: auto;
+  }
+}
