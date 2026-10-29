@@ -326,3 +326,90 @@ body {
   font-size: var(--texto-normal);
   color: var(--cor-branco);
 }
+
+/* ========== TABLET (a partir de 768px) ========== */
+@media (min-width: 768px) {
+  /* menu aparece expandido e o botão ☰ some */
+  .menu-botao {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    gap: var(--espaco-p);
+  }
+
+  .menu a {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--cor-branco);
+    border-radius: 999px;
+    font-size: var(--texto-pequeno);
+  }
+
+  .principal {
+    padding: var(--espaco-g);
+  }
+
+  /* sobre o time em 2 colunas: texto à esquerda, foto à direita */
+  .sobre {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .sobre-foto,
+  .sobre-texto {
+    flex: 1;
+  }
+
+  .sobre-foto {
+    height: 200px;
+  }
+
+  /* título e filtros na mesma linha */
+  .secao-topo {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* elenco em 2 colunas e card vertical */
+  .jogadores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .jogador {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "foto foto"
+      "nome numero"
+      "detalhes detalhes";
+    row-gap: var(--espaco-p);
+  }
+
+  .jogador-foto {
+    width: 100%;
+    height: 180px;
+  }
+
+  .jogador-detalhes {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--espaco-p);
+  }
+
+  /* cada jogo vira uma linha inteira */
+  .jogo {
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "data adversario local mando";
+  }
+
+  /* rodapé em 2 colunas */
+  .rodape {
+    grid-template-columns: 1fr 1fr;
+    padding: var(--espaco-g);
+  }
+
+  .rodape-time {
+    grid-row: span 2;
+  }
+}
