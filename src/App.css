@@ -238,3 +238,75 @@ body {
   font-size: var(--texto-pequeno);
   color: var(--cor-texto-suave);
 }
+
+/* ---------- próximos jogos ---------- */
+.lista-jogos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-m);
+  margin-top: var(--espaco-m);
+}
+
+/* no celular: data | adversário e local | casa/fora */
+.jogo {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "data adversario mando"
+    "data local mando";
+  column-gap: var(--espaco-m);
+  align-items: center;
+  padding: var(--espaco-m);
+  border-left: 4px solid var(--cor-destaque);
+  border-radius: var(--raio);
+  background-color: var(--cor-branco);
+}
+
+.jogo-data {
+  grid-area: data;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 56px;
+  padding: var(--espaco-p) 0;
+  border-radius: var(--raio);
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  font-size: var(--texto-pequeno);
+}
+
+.jogo-data strong {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.jogo-adversario {
+  grid-area: adversario;
+  font-size: var(--texto-normal);
+  font-weight: 700;
+}
+
+.jogo-local {
+  grid-area: local;
+  font-size: var(--texto-pequeno);
+  color: var(--cor-texto-suave);
+}
+
+.jogo-mando {
+  grid-area: mando;
+  justify-self: start;
+  padding: 0 var(--espaco-p);
+  border-radius: 999px;
+  font-size: var(--texto-pequeno);
+  font-weight: 700;
+}
+
+.jogo-casa {
+  background-color: var(--cor-casa-fundo);
+  color: var(--cor-casa);
+}
+
+.jogo-fora {
+  background-color: var(--cor-fora-fundo);
+  color: var(--cor-fora);
+}

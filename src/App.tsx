@@ -150,6 +150,45 @@ function App() {
               </li>
             </ul>
           </section>
+
+          <aside className="jogos" id="jogos">
+            <h2 className="secao-titulo">Próximos jogos</h2>
+
+            <ul className="lista-jogos">
+              <li className="jogo">
+                <div className="jogo-data">
+                  <span>SÁB</span>
+                  <strong>01</strong>
+                  <span>NOV</span>
+                </div>
+                <h3 className="jogo-adversario">Marmita Quente FC x Leões da Vila</h3>
+                <p className="jogo-local">📍 Campo do Bairro · 15h</p>
+                <span className="jogo-mando jogo-casa">Casa</span>
+              </li>
+
+              <li className="jogo">
+                <div className="jogo-data">
+                  <span>DOM</span>
+                  <strong>09</strong>
+                  <span>NOV</span>
+                </div>
+                <h3 className="jogo-adversario">Marmita Quente FC x Unidos do Morro</h3>
+                <p className="jogo-local">📍 Estádio Municipal · 9h</p>
+                <span className="jogo-mando jogo-fora">Fora</span>
+              </li>
+
+              <li className="jogo">
+                <div className="jogo-data">
+                  <span>SÁB</span>
+                  <strong>15</strong>
+                  <span>NOV</span>
+                </div>
+                <h3 className="jogo-adversario">Marmita Quente FC x Real Esperança</h3>
+                <p className="jogo-local">📍 Campo do Bairro · 16h</p>
+                <span className="jogo-mando jogo-casa">Casa</span>
+              </li>
+            </ul>
+          </aside>
         </div>
       </main>
     </>
