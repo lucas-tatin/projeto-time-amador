@@ -37,3 +37,96 @@ body {
   color: var(--cor-texto);
   background-color: var(--cor-fundo);
 }
+
+/* ---------- cabeçalho ---------- */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espaco-m);
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+.cabecalho-marca {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-p);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--cor-branco);
+  color: var(--cor-primaria);
+  font-weight: 900;
+}
+
+.cabecalho-titulo {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.menu-botao {
+  background: none;
+  border: none;
+  color: var(--cor-branco);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+}
+
+/* ---------- conteúdo principal ---------- */
+.principal {
+  padding: var(--espaco-m);
+}
+
+/* ---------- sobre o time ---------- */
+.sobre {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-m);
+  padding: var(--espaco-m);
+  margin-bottom: var(--espaco-g);
+  background-color: var(--cor-branco);
+  border-radius: var(--raio);
+}
+
+.sobre-foto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  border-radius: var(--raio);
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-destaque));
+  font-size: 4rem;
+}
+
+.sobre-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espaco-m);
+  color: var(--cor-texto-suave);
+}
+
+.sobre-titulo {
+  font-size: var(--texto-titulo);
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+
+.botao {
+  padding: var(--espaco-p) var(--espaco-m);
+  border-radius: var(--raio);
+  background-color: var(--cor-destaque);
+  color: var(--cor-branco);
+  font-weight: 700;
+}
