@@ -310,3 +310,19 @@ body {
   background-color: var(--cor-fora-fundo);
   color: var(--cor-fora);
 }
+
+/* ---------- rodapé ---------- */
+.rodape {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-m);
+  padding: var(--espaco-g) var(--espaco-m);
+  background-color: var(--cor-rodape);
+  color: var(--cor-borda);
+  font-size: var(--texto-pequeno);
+}
+
+.rodape strong {
+  font-size: var(--texto-normal);
+  color: var(--cor-branco);
+}
