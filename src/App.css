@@ -1,0 +1,470 @@
+:root {
+  /* cores */
+  --cor-primaria: #b91c1c;
+  --cor-primaria-escura: #7f1d1d;
+  --cor-destaque: #f97316;
+  --cor-destaque-clara: #fff7ed;
+  --cor-texto: #1f2937;
+  --cor-texto-suave: #6b7280;
+  --cor-fundo: #f3f4f6;
+  --cor-branco: #ffffff;
+  --cor-borda: #e5e7eb;
+  --cor-rodape: #1f2937;
+  --cor-casa: #166534;
+  --cor-casa-fundo: #dcfce7;
+  --cor-fora: #3730a3;
+  --cor-fora-fundo: #e0e7ff;
+
+  /* tipografia */
+  --fonte: 'Roboto', Arial, sans-serif;
+  --texto-pequeno: 0.8rem;
+  --texto-normal: 1rem;
+  --texto-titulo: 1.5rem;
+  --texto-numero: 1.6rem;
+
+  /* espaçamentos */
+  --espaco-p: 0.5rem;
+  --espaco-m: 1rem;
+  --espaco-g: 2rem;
+
+  /* bordas */
+  --raio: 8px;
+}
+
+body {
+  font-family: var(--fonte);
+  font-size: var(--texto-normal);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+/* ---------- cabeçalho ---------- */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espaco-m);
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+.cabecalho-marca {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-p);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--cor-branco);
+  color: var(--cor-primaria);
+  font-weight: 900;
+}
+
+.cabecalho-titulo {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.menu-botao {
+  background: none;
+  border: none;
+  color: var(--cor-branco);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+}
+
+/* ---------- conteúdo principal ---------- */
+.principal {
+  padding: var(--espaco-m);
+}
+
+/* ---------- sobre o time ---------- */
+.sobre {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-m);
+  padding: var(--espaco-m);
+  margin-bottom: var(--espaco-g);
+  background-color: var(--cor-branco);
+  border-radius: var(--raio);
+}
+
+.sobre-foto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  border-radius: var(--raio);
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-destaque));
+  font-size: 4rem;
+}
+
+.sobre-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espaco-m);
+  color: var(--cor-texto-suave);
+}
+
+.sobre-titulo {
+  font-size: var(--texto-titulo);
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+
+.botao {
+  padding: var(--espaco-p) var(--espaco-m);
+  border-radius: var(--raio);
+  background-color: var(--cor-destaque);
+  color: var(--cor-branco);
+  font-weight: 700;
+}
+
+/* ---------- títulos das seções ---------- */
+.secao-topo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-p);
+  margin-bottom: var(--espaco-m);
+}
+
+.secao-titulo {
+  font-size: var(--texto-titulo);
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+
+/* ---------- filtros do elenco ---------- */
+.filtros {
+  display: flex;
+  gap: var(--espaco-p);
+  overflow-x: auto;
+}
+
+.filtro {
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 999px;
+  background-color: var(--cor-branco);
+  font-family: var(--fonte);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.filtro-ativo {
+  border-color: var(--cor-destaque);
+  background-color: var(--cor-destaque);
+  color: var(--cor-branco);
+  font-weight: 700;
+}
+
+/* ---------- elenco ---------- */
+.elenco {
+  margin-bottom: var(--espaco-g);
+}
+
+.jogadores {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-m);
+}
+
+/* no celular o card é horizontal: foto | nome e detalhes | número */
+.jogador {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  grid-template-areas:
+    "foto nome numero"
+    "foto detalhes numero";
+  column-gap: var(--espaco-m);
+  align-items: center;
+  padding: var(--espaco-m);
+  border-left: 4px solid var(--cor-destaque);
+  border-radius: var(--raio);
+  background-color: var(--cor-branco);
+}
+
+.jogador-foto {
+  grid-area: foto;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: var(--raio);
+}
+
+.jogador-nome {
+  grid-area: nome;
+  font-size: var(--texto-normal);
+  font-weight: 700;
+}
+
+.jogador-numero {
+  grid-area: numero;
+  font-size: var(--texto-numero);
+  font-weight: 900;
+  color: var(--cor-primaria);
+}
+
+.jogador-detalhes {
+  grid-area: detalhes;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.jogador-posicao {
+  padding: 0 var(--espaco-p);
+  border: 1px solid var(--cor-destaque);
+  border-radius: 999px;
+  background-color: var(--cor-destaque-clara);
+  color: var(--cor-primaria-escura);
+  font-size: var(--texto-pequeno);
+  font-weight: 700;
+}
+
+.jogador-gols {
+  font-size: var(--texto-pequeno);
+  color: var(--cor-texto-suave);
+}
+
+/* ---------- próximos jogos ---------- */
+.lista-jogos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-m);
+  margin-top: var(--espaco-m);
+}
+
+/* no celular: data | adversário e local | casa/fora */
+.jogo {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "data adversario mando"
+    "data local mando";
+  column-gap: var(--espaco-m);
+  align-items: center;
+  padding: var(--espaco-m);
+  border-left: 4px solid var(--cor-destaque);
+  border-radius: var(--raio);
+  background-color: var(--cor-branco);
+}
+
+.jogo-data {
+  grid-area: data;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 56px;
+  padding: var(--espaco-p) 0;
+  border-radius: var(--raio);
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  font-size: var(--texto-pequeno);
+}
+
+.jogo-data strong {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.jogo-adversario {
+  grid-area: adversario;
+  font-size: var(--texto-normal);
+  font-weight: 700;
+}
+
+.jogo-local {
+  grid-area: local;
+  font-size: var(--texto-pequeno);
+  color: var(--cor-texto-suave);
+}
+
+.jogo-mando {
+  grid-area: mando;
+  justify-self: start;
+  padding: 0 var(--espaco-p);
+  border-radius: 999px;
+  font-size: var(--texto-pequeno);
+  font-weight: 700;
+}
+
+.jogo-casa {
+  background-color: var(--cor-casa-fundo);
+  color: var(--cor-casa);
+}
+
+.jogo-fora {
+  background-color: var(--cor-fora-fundo);
+  color: var(--cor-fora);
+}
+
+/* ---------- rodapé ---------- */
+.rodape {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-m);
+  padding: var(--espaco-g) var(--espaco-m);
+  background-color: var(--cor-rodape);
+  color: var(--cor-borda);
+  font-size: var(--texto-pequeno);
+}
+
+.rodape strong {
+  font-size: var(--texto-normal);
+  color: var(--cor-branco);
+}
+
+/* ========== TABLET (a partir de 768px) ========== */
+@media (min-width: 768px) {
+  /* menu aparece expandido e o botão ☰ some */
+  .menu-botao {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    gap: var(--espaco-p);
+  }
+
+  .menu a {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--cor-branco);
+    border-radius: 999px;
+    font-size: var(--texto-pequeno);
+  }
+
+  .principal {
+    padding: var(--espaco-g);
+  }
+
+  /* sobre o time em 2 colunas: texto à esquerda, foto à direita */
+  .sobre {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .sobre-foto,
+  .sobre-texto {
+    flex: 1;
+  }
+
+  .sobre-foto {
+    height: 200px;
+  }
+
+  /* título e filtros na mesma linha */
+  .secao-topo {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* elenco em 2 colunas e card vertical */
+  .jogadores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .jogador {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "foto foto"
+      "nome numero"
+      "detalhes detalhes";
+    row-gap: var(--espaco-p);
+  }
+
+  .jogador-foto {
+    width: 100%;
+    height: 180px;
+  }
+
+  .jogador-detalhes {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--espaco-p);
+  }
+
+  /* cada jogo vira uma linha inteira */
+  .jogo {
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "data adversario local mando";
+  }
+
+  /* rodapé em 2 colunas */
+  .rodape {
+    grid-template-columns: 1fr 1fr;
+    padding: var(--espaco-g);
+  }
+
+  .rodape-time {
+    grid-row: span 2;
+  }
+}
+
+/* ========== DESKTOP (a partir de 1024px) ========== */
+@media (min-width: 1024px) {
+  .cabecalho {
+    padding: var(--espaco-m) var(--espaco-g);
+  }
+
+  .principal {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .sobre-foto {
+    height: 260px;
+  }
+
+  /* elenco ocupa ~3/4 e os jogos viram uma coluna lateral */
+  .conteudo {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: var(--espaco-g);
+    align-items: start;
+  }
+
+  .jogadores {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .jogos {
+    padding: var(--espaco-m);
+    border-radius: var(--raio);
+    background-color: var(--cor-branco);
+  }
+
+  /* card do jogo compacto: data + adversário + selo em cima, local embaixo */
+  .jogo {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "data adversario"
+      "data mando"
+      "local local";
+    row-gap: var(--espaco-p);
+    border: 1px solid var(--cor-borda);
+    border-left: 4px solid var(--cor-destaque);
+  }
+
+  /* rodapé em 3 colunas */
+  .rodape {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rodape-time {
+    grid-row: auto;
+  }
+}
