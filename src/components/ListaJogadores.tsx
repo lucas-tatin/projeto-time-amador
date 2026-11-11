@@ -6,6 +6,10 @@ type ListaJogadoresProps = {
 }
 
 function ListaJogadores({ jogadores }: ListaJogadoresProps) {
+  if (jogadores.length === 0) {
+    return <p className="lista-vazia">Nenhum jogador encontrado.</p>
+  }
+
   return (
     <ul className="jogadores">
       {jogadores.map((jogador) => (

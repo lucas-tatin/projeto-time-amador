@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import Cabecalho from './components/Cabecalho'
 import Sobre from './components/Sobre'
@@ -8,6 +9,12 @@ import { jogadores } from './data/jogadores'
 import { jogos } from './data/jogos'
 
 function App() {
+  const [setorAtivo, setSetorAtivo] = useState('Todos')
+
+  const jogadoresFiltrados = jogadores.filter(
+    (jogador) => setorAtivo === 'Todos' || jogador.setor === setorAtivo
+  )
+
   return (
     <>
       <Cabecalho />
@@ -16,7 +23,11 @@ function App() {
         <Sobre />
 
         <div className="conteudo">
-          <SecaoElenco jogadores={jogadores} />
+          <SecaoElenco
+            jogadores={jogadoresFiltrados}
+            setorAtivo={setorAtivo}
+            onSelecionarSetor={setSetorAtivo}
+          />
           <ProximosJogos jogos={jogos} />
         </div>
       </main>

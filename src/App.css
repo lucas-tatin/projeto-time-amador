@@ -468,3 +468,12 @@ body {
     grid-row: auto;
   }
 }
+
+/* ---------- mensagem de lista vazia ---------- */
+.lista-vazia {
+  padding: var(--espaco-g);
+  border-radius: var(--raio);
+  background-color: var(--cor-branco);
+  color: var(--cor-texto-suave);
+  text-align: center;
+}

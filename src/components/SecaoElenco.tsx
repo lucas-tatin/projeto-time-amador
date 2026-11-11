@@ -1,23 +1,19 @@
 import type { Jogador } from '../data/jogadores'
+import FiltroPosicao from './FiltroPosicao'
 import ListaJogadores from './ListaJogadores'
 
 type SecaoElencoProps = {
   jogadores: Jogador[]
+  setorAtivo: string
+  onSelecionarSetor: (setor: string) => void
 }
 
-function SecaoElenco({ jogadores }: SecaoElencoProps) {
+function SecaoElenco({ jogadores, setorAtivo, onSelecionarSetor }: SecaoElencoProps) {
   return (
     <section className="elenco" id="elenco">
       <div className="secao-topo">
         <h2 className="secao-titulo">Elenco</h2>
-
-        <div className="filtros">
-          <button className="filtro filtro-ativo">Todos</button>
-          <button className="filtro">Goleiros</button>
-          <button className="filtro">Defesa</button>
-          <button className="filtro">Meio</button>
-          <button className="filtro">Ataque</button>
-        </div>
+        <FiltroPosicao setorAtivo={setorAtivo} onSelecionarSetor={onSelecionarSetor} />
       </div>
 
       <ListaJogadores jogadores={jogadores} />
