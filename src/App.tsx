@@ -11,6 +11,7 @@ import { jogos } from './data/jogos'
 function App() {
   const [setorAtivo, setSetorAtivo] = useState('Todos')
   const [busca, setBusca] = useState('')
+  const [modoEscuro, setModoEscuro] = useState(false)
 
   const jogadoresFiltrados = jogadores.filter(
     (jogador) =>
@@ -19,8 +20,8 @@ function App() {
   )
 
   return (
-    <>
-      <Cabecalho />
+    <div className={modoEscuro ? 'app tema-escuro' : 'app'}>
+      <Cabecalho modoEscuro={modoEscuro} onAlternarTema={() => setModoEscuro(!modoEscuro)} />
 
       <main className="principal">
         <Sobre />
@@ -38,7 +39,7 @@ function App() {
       </main>
 
       <Rodape />
-    </>
+    </div>
   )
 }
 
