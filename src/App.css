@@ -477,3 +477,21 @@ body {
   color: var(--cor-texto-suave);
   text-align: center;
 }
+
+/* ---------- busca de jogadores ---------- */
+.campo-busca {
+  width: 100%;
+  margin-bottom: var(--espaco-m);
+  padding: var(--espaco-p) var(--espaco-m);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-branco);
+  color: var(--cor-texto);
+  font-family: var(--fonte);
+  font-size: var(--texto-normal);
+}
+
+.campo-busca:focus {
+  outline: none;
+  border-color: var(--cor-destaque);
+}

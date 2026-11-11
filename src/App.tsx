@@ -10,9 +10,12 @@ import { jogos } from './data/jogos'
 
 function App() {
   const [setorAtivo, setSetorAtivo] = useState('Todos')
+  const [busca, setBusca] = useState('')
 
   const jogadoresFiltrados = jogadores.filter(
-    (jogador) => setorAtivo === 'Todos' || jogador.setor === setorAtivo
+    (jogador) =>
+      (setorAtivo === 'Todos' || jogador.setor === setorAtivo) &&
+      jogador.nome.toLowerCase().includes(busca.toLowerCase())
   )
 
   return (
@@ -27,6 +30,8 @@ function App() {
             jogadores={jogadoresFiltrados}
             setorAtivo={setorAtivo}
             onSelecionarSetor={setSetorAtivo}
+            busca={busca}
+            onBuscar={setBusca}
           />
           <ProximosJogos jogos={jogos} />
         </div>
