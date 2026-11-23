@@ -534,3 +534,28 @@ body {
   --cor-destaque-clara: #431407;
   --cor-primaria-escura: #fdba74;
 }
+
+/* ---------- estado de carregando ---------- */
+.estado-carregando {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco-p);
+  padding: var(--espaco-g);
+  border-radius: var(--raio);
+  background-color: var(--cor-card);
+  color: var(--cor-texto-suave);
+  font-weight: 700;
+}
+
+/* bola girando enquanto os dados não chegam */
+.carregando-bola {
+  font-size: 2.5rem;
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}

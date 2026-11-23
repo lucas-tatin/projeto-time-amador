@@ -11,13 +11,16 @@ import { jogos } from './data/jogos'
 
 function App() {
   const [jogadores, setJogadores] = useState<Jogador[]>([])
+  const [carregando, setCarregando] = useState(true)
   const [setorAtivo, setSetorAtivo] = useState('Todos')
   const [busca, setBusca] = useState('')
   const [modoEscuro, setModoEscuro] = useState(false)
 
   // carrega o elenco uma vez, quando a página abre
   useEffect(() => {
-    buscarJogadores().then((dados) => setJogadores(dados))
+    buscarJogadores()
+      .then((dados) => setJogadores(dados))
+      .finally(() => setCarregando(false))
   }, [])
 
   const jogadoresFiltrados = jogadores.filter(
@@ -36,6 +39,7 @@ function App() {
         <div className="conteudo">
           <SecaoElenco
             jogadores={jogadoresFiltrados}
+            carregando={carregando}
             setorAtivo={setorAtivo}
             onSelecionarSetor={setSetorAtivo}
             busca={busca}

@@ -5,13 +5,14 @@ import ListaJogadores from './ListaJogadores'
 
 type SecaoElencoProps = {
   jogadores: Jogador[]
+  carregando: boolean
   setorAtivo: string
   onSelecionarSetor: (setor: string) => void
   busca: string
   onBuscar: (texto: string) => void
 }
 
-function SecaoElenco({ jogadores, setorAtivo, onSelecionarSetor, busca, onBuscar }: SecaoElencoProps) {
+function SecaoElenco({ jogadores, carregando, setorAtivo, onSelecionarSetor, busca, onBuscar }: SecaoElencoProps) {
   return (
     <section className="elenco" id="elenco">
       <div className="secao-topo">
@@ -20,7 +21,15 @@ function SecaoElenco({ jogadores, setorAtivo, onSelecionarSetor, busca, onBuscar
       </div>
 
       <CampoBusca busca={busca} onBuscar={onBuscar} />
-      <ListaJogadores jogadores={jogadores} />
+
+      {carregando ? (
+        <div className="estado-carregando">
+          <span className="carregando-bola">⚽</span>
+          <p>Carregando elenco...</p>
+        </div>
+      ) : (
+        <ListaJogadores jogadores={jogadores} />
+      )}
     </section>
   )
 }
