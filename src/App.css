@@ -559,3 +559,25 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* ---------- estado de erro ---------- */
+.estado-erro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-p);
+  padding: var(--espaco-g);
+  border-left: 4px solid var(--cor-primaria);
+  border-radius: var(--raio);
+  background-color: var(--cor-card);
+  color: var(--cor-texto);
+  text-align: center;
+}
+
+.estado-erro strong {
+  font-size: 1.1rem;
+  color: var(--cor-titulo);
+}
+
+.estado-erro p {
+  color: var(--cor-texto-suave);
+}
