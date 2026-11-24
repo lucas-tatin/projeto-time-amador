@@ -1,17 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Cabecalho from './components/Cabecalho'
 import Sobre from './components/Sobre'
 import SecaoElenco from './components/SecaoElenco'
 import ProximosJogos from './components/ProximosJogos'
 import Rodape from './components/Rodape'
-import { jogadores } from './data/jogadores'
+import { buscarJogadores } from './data/jogadores'
+import type { Jogador } from './data/jogadores'
 import { jogos } from './data/jogos'
 
 function App() {
+  const [jogadores, setJogadores] = useState<Jogador[]>([])
+  const [carregando, setCarregando] = useState(true)
+  const [erro, setErro] = useState('')
   const [setorAtivo, setSetorAtivo] = useState('Todos')
   const [busca, setBusca] = useState('')
   const [modoEscuro, setModoEscuro] = useState(false)
+
+  // carrega o elenco uma vez, quando a página abre
+  useEffect(() => {
+    buscarJogadores()
+      .then((dados) => setJogadores(dados))
+      .catch(() => setErro('Não foi possível carregar o elenco. Verifique sua conexão e recarregue a página.'))
+      .finally(() => setCarregando(false))
+  }, [])
 
   const jogadoresFiltrados = jogadores.filter(
     (jogador) =>
@@ -29,6 +41,8 @@ function App() {
         <div className="conteudo">
           <SecaoElenco
             jogadores={jogadoresFiltrados}
+            carregando={carregando}
+            erro={erro}
             setorAtivo={setorAtivo}
             onSelecionarSetor={setSetorAtivo}
             busca={busca}

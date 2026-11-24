@@ -534,3 +534,50 @@ body {
   --cor-destaque-clara: #431407;
   --cor-primaria-escura: #fdba74;
 }
+
+/* ---------- estado de carregando ---------- */
+.estado-carregando {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco-p);
+  padding: var(--espaco-g);
+  border-radius: var(--raio);
+  background-color: var(--cor-card);
+  color: var(--cor-texto-suave);
+  font-weight: 700;
+}
+
+/* bola girando enquanto os dados não chegam */
+.carregando-bola {
+  font-size: 2.5rem;
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- estado de erro ---------- */
+.estado-erro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-p);
+  padding: var(--espaco-g);
+  border-left: 4px solid var(--cor-primaria);
+  border-radius: var(--raio);
+  background-color: var(--cor-card);
+  color: var(--cor-texto);
+  text-align: center;
+}
+
+.estado-erro strong {
+  font-size: 1.1rem;
+  color: var(--cor-titulo);
+}
+
+.estado-erro p {
+  color: var(--cor-texto-suave);
+}
